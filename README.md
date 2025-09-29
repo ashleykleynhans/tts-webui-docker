@@ -92,6 +92,7 @@ docker run -d \
   -p 7777:7777 \
   -p 8888:8888 \
   -p 2999:2999 \
+  -e VENV_PATH="/workspace/venvs/tts-webui" \
   ashleykza/tts-webui:latest
 ```
 
@@ -99,21 +100,22 @@ You can obviously substitute the image name and tag with your own.
 
 ### Ports
 
-| Connect Port | Internal Port | Description              |
-|--------------|---------------|--------------------------|
-| 3000         | 3001          | TTS WebUI                |
-| 3005         | 3006          | React TTS WebUI (beta)   |
-| 7777         | 7777          | Code Server              |
-| 8888         | 8888          | Jupyter Lab              |
-| 2999         | 2999          | RunPod File Uploader     |
+| Connect Port | Internal Port | Description            |
+|--------------|---------------|------------------------|
+| 3000         | 3001          | TTS WebUI              |
+| 3005         | 3006          | React TTS WebUI (beta) |
+| 7777         | 7777          | Code Server            |
+| 8888         | 8888          | Jupyter Lab            |
+| 2999         | 2999          | Runpod File Uploader   |
 
 ### Environment Variables
 
-| Variable             | Description                                      | Default               |
-|----------------------|--------------------------------------------------|-----------------------|
-| JUPYTER_LAB_PASSWORD | Set a password for Jupyter lab                   | not set - no password |
-| DISABLE_AUTOLAUNCH   | Disable TTS WebUI from launching automatically   | (not set)             |
-| DISABLE_SYNC         | Disable syncing if using a RunPod network volume | (not set)             |
+| Variable             | Description                                      | Default                    |
+|----------------------|--------------------------------------------------|----------------------------|
+| VENV_PATH            | Set the path for the Python venv for the app     | /workspace/venvs/tts-webui |
+| JUPYTER_LAB_PASSWORD | Set a password for Jupyter lab                   | not set - no password      |
+| DISABLE_AUTOLAUNCH   | Disable TTS WebUI from launching automatically   | (not set)                  |
+| DISABLE_SYNC         | Disable syncing if using a RunPod network volume | (not set)                  |
 
 ## Logs
 
