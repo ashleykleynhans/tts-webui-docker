@@ -9,7 +9,7 @@ python3 -m venv --system-site-packages /venv
 # Clone the git repo of TTS WebUI and set version
 git clone https://github.com/rsxdalv/TTS-WebUI.git
 cd /TTS-WebUI
-git checkout ${TTS_COMMIT}
+git checkout ${TTS_TAG}
 
 # Install the Python dependencies for TTS WebUI
 source /venv/bin/activate

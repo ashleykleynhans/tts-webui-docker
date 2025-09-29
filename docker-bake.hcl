@@ -47,6 +47,6 @@ target "default" {
         INDEX_URL = "https://download.pytorch.org/whl/cu${CU_VERSION}"
         TORCH_VERSION = "${TORCH_VERSION}+cu${CU_VERSION}"
         XFORMERS_VERSION = "0.0.30"
-        TTS_COMMIT = "8a61fb7ffa4cdd83839df072a3359ddbd6c2e68b"
+        TTS_TAG = "v0.0.1"
     }
 }
