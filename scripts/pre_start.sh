@@ -5,6 +5,7 @@ export APP="TTS-WebUI"
 
 TEMPLATE_NAME="${APP}"
 TEMPLATE_VERSION_FILE="/workspace/${APP}/template.json"
+echo "VENV PATH: ${VENV_PATH}
 
 echo "TEMPLATE NAME: ${TEMPLATE_NAME}"
 echo "TEMPLATE VERSION: ${TEMPLATE_VERSION}"
@@ -101,9 +102,12 @@ sync_apps() {
         # Start the timer
         start_time=$(date +%s)
 
-        echo "SYNC: Sync 1 of 1"
+        echo "SYNC: Sync 1 of 2"
+        sync_directory "/venv" "${VENV_PATH}"
+        echo "SYNC: Sync 2 of 2"
         sync_directory "/${APP}" "/workspace/${APP}"
         save_template_json
+        echo "${VENV_PATH}" > "/workspace/${APP}/venv_path"
 
         # End the timer and calculate the duration
         end_time=$(date +%s)
@@ -116,6 +120,12 @@ sync_apps() {
         echo "SYNC: Syncing COMPLETE!"
         printf "SYNC: Time taken: %d minutes, %d seconds\n" ${minutes} ${seconds}
     fi
+}
+
+fix_venvs() {
+    # Fix the venv to make it work from VENV_PATH
+    echo "VENV: Fixing venv..."
+    /fix_venv.sh /venv ${VENV_PATH}
 }
 
 if [ "$(printf '%s\n' "$EXISTING_VERSION" "$TEMPLATE_VERSION" | sort -V | head -n 1)" = "$EXISTING_VERSION" ]; then
