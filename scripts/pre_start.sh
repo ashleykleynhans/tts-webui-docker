@@ -5,7 +5,7 @@ export APP="TTS-WebUI"
 
 TEMPLATE_NAME="${APP}"
 TEMPLATE_VERSION_FILE="/workspace/${APP}/template.json"
-echo "VENV PATH: ${VENV_PATH}
+echo "VENV PATH: ${VENV_PATH}"
 
 echo "TEMPLATE NAME: ${TEMPLATE_NAME}"
 echo "TEMPLATE VERSION: ${TEMPLATE_VERSION}"
