@@ -131,6 +131,7 @@ fix_venvs() {
 if [ "$(printf '%s\n' "$EXISTING_VERSION" "$TEMPLATE_VERSION" | sort -V | head -n 1)" = "$EXISTING_VERSION" ]; then
     if [ "$EXISTING_VERSION" != "$TEMPLATE_VERSION" ]; then
         sync_apps
+        fix_venvs
 
         # Create directories
         mkdir -p /workspace/logs /workspace/tmp
