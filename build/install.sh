@@ -36,5 +36,10 @@ curl -sL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
 bash nodesource_setup.sh
 apt -y install nodejs
 cd /TTS-WebUI/react-ui
+
+# Modify package.json to use port 3006
+sed -i 's/"start": "next start"/"start": "next start -p 3006"/' package.json
+sed -i 's/"start": "next start -p [0-9]*"/"start": "next start -p 3006"/' package.json
+
 npm install
 npm run build

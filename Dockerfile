@@ -23,6 +23,12 @@ RUN /install.sh && rm /install.sh
 COPY config.json /TTS-WebUI/config.json
 COPY .env /TTS-WebUI/.env
 
+# Install Application Manager
+ARG APP_MANAGER_VERSION
+RUN /install_app_manager.sh
+COPY app-manager/config.json /app-manager/public/config.json
+COPY --chmod=755 app-manager/*.sh /app-manager/scripts/
+
 # Remove existing SSH host keys
 RUN rm -f /etc/ssh/ssh_host_*
 

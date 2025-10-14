@@ -90,6 +90,7 @@ docker run -d \
   -p 3000:3001 \
   -p 3005:3006 \
   -p 7777:7777 \
+  -p 8000:8000 \
   -p 8888:8888 \
   -p 2999:2999 \
   -e VENV_PATH="/workspace/venvs/tts-webui" \
@@ -105,6 +106,7 @@ You can obviously substitute the image name and tag with your own.
 | 3000         | 3001          | TTS WebUI              |
 | 3005         | 3006          | React TTS WebUI (beta) |
 | 7777         | 7777          | Code Server            |
+| 8000         | 8000          | Application Manager    |
 | 8888         | 8888          | Jupyter Lab            |
 | 2999         | 2999          | Runpod File Uploader   |
 

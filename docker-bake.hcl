@@ -11,7 +11,7 @@ variable "APP" {
 }
 
 variable "RELEASE" {
-    default = "5.0.3"
+    default = "5.0.4"
 }
 
 variable "CU_VERSION" {
@@ -48,5 +48,6 @@ target "default" {
         TORCH_VERSION = "${TORCH_VERSION}+cu${CU_VERSION}"
         XFORMERS_VERSION = "0.0.30"
         TTS_TAG = "v0.0.1"
+        APP_MANAGER_VERSION = "1.3.0"
     }
 }
