@@ -37,6 +37,7 @@ COPY .env /TTS-WebUI/.env
 
 # Install Application Manager
 ARG APP_MANAGER_VERSION
+COPY --chmod=755 build/install_app_manager.sh /install_app_manager.sh
 RUN /install_app_manager.sh
 COPY app-manager/config.json /app-manager/public/config.json
 COPY --chmod=755 app-manager/*.sh /app-manager/scripts/
