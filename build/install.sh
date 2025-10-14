@@ -4,7 +4,7 @@ set -e
 # Create and use the Python venv
 # No --system-site-packages used here because it creates issues with
 # packages not being found.
-python3 -m venv --system-site-packages /venv
+python3 -m venv /venv
 
 # Clone the git repo of TTS WebUI and set version
 git clone https://github.com/rsxdalv/TTS-WebUI.git
