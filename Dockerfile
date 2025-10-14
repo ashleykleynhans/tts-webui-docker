@@ -7,6 +7,18 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PIP_NO_CACHE_DIR=on \
     SHELL=/bin/bash
 
+RUN apt-get update && apt-get install -y \
+    libavformat-dev \
+    libavcodec-dev \
+    libavdevice-dev \
+    libavutil-dev \
+    libavfilter-dev \
+    libswscale-dev \
+    libswresample-dev \
+    ffmpeg \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install TTS WebUI
 ARG INDEX_URL
 ARG TORCH_VERSION
