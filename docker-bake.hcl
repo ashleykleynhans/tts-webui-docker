@@ -23,7 +23,7 @@ variable "BASE_IMAGE_REPOSITORY" {
 }
 
 variable "BASE_IMAGE_VERSION" {
-    default = "2.4.8"
+    default = "2.4.9"
 }
 
 variable "CUDA_VERSION" {
@@ -47,7 +47,7 @@ target "default" {
         INDEX_URL = "https://download.pytorch.org/whl/cu${CU_VERSION}"
         TORCH_VERSION = "${TORCH_VERSION}+cu${CU_VERSION}"
         XFORMERS_VERSION = "0.0.30"
-        TTS_TAG = "v0.0.1"
+        TTS_TAG = "v0.3.0"
         APP_MANAGER_VERSION = "1.3.0"
     }
 }
