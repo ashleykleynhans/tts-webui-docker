@@ -14,20 +14,14 @@ git checkout ${TTS_TAG}
 # Install the Python dependencies for TTS WebUI
 source /venv/bin/activate
 
-# pip > 24.0 is broken due to fairseq
-pip3 install --no-cache-dir --upgrade pip==24.0 setuptools
+pip3 install --no-cache-dir --upgrade pip setuptools wheel
 
-pip3 install --no-cache-dir torch==${TORCH_VERSION} torchaudio torchvision --extra-index-url ${INDEX_URL}
+pip3 install --no-cache-dir torch==${TORCH_VERSION} torchaudio==${TORCH_VERSION} torchvision --extra-index-url ${INDEX_URL}
 pip3 install --no-cache-dir xformers==${XFORMERS_VERSION}
 pip3 install --no-cache-dir torch==$TORCH_VERSION -r requirements.txt
-pip3 install --no-cache-dir torch==$TORCH_VERSION git+https://github.com/rsxdalv/extension_bark_voice_clone@main
-pip3 install --no-cache-dir torch==$TORCH_VERSION git+https://github.com/rsxdalv/extension_rvc@main
-pip3 install --no-cache-dir torch==$TORCH_VERSION git+https://github.com/rsxdalv/extension_audiocraft@main
-pip3 install --no-cache-dir torch==$TORCH_VERSION git+https://github.com/rsxdalv/extension_styletts2@main
-pip3 install --no-cache-dir torch==$TORCH_VERSION git+https://github.com/rsxdalv/extension_vall_e_x@main
-pip3 install --no-cache-dir torch==$TORCH_VERSION git+https://github.com/rsxdalv/extension_maha_tts@main
-pip3 install --no-cache-dir torch==$TORCH_VERSION git+https://github.com/rsxdalv/extension_stable_audio@main
-pip3 install --no-cache-dir torch==$TORCH_VERSION nvidia-ml-py
+pip3 install --no-cache-dir "tts-webui-extension.bark_voice_clone>=0.0.2" --extra-index-url https://tts-webui.github.io/extensions-index/
+pip3 install --no-cache-dir "tts-webui-extension.rvc>=0.0.6" --extra-index-url https://tts-webui.github.io/extensions-index/
+pip3 install --no-cache-dir "tts-webui-extension.styletts2>=0.1.0" --extra-index-url https://tts-webui.github.io/extensions-index/
 deactivate
 
 # Install the NodeJS dependencies for the TTS WebUI
