@@ -37,9 +37,9 @@ Web UI for:
 * CUDA 12.8
 * Python 3.11.12
 * [TTS-WebUI](
-  https://github.com/rsxdalv/TTS-WebUI) v0.3.0
-* Torch 2.7.0
-* xformers 0.0.30
+  https://github.com/rsxdalv/TTS-WebUI) v1.1.0
+* Torch 2.11.0
+* xformers 0.0.35
 * [Jupyter Lab](https://github.com/jupyterlab/jupyterlab)
 * [code-server](https://github.com/coder/code-server)
 * [runpodctl](https://github.com/runpod/runpodctl)
