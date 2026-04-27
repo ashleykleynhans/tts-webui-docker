@@ -23,11 +23,11 @@ RUN apt-get update && apt-get install -y \
 ARG INDEX_URL
 ARG TORCH_VERSION
 ARG XFORMERS_VERSION
-ARG TTS_TAG
+ARG RELEASE
 ENV INDEX_URL=${INDEX_URL}
 ENV TORCH_VERSION=${TORCH_VERSION}
 ENV XFORMERS_VERSION=${XFORMERS_VERSION}
-ENV TTS_TAG=${TTS_TAG}
+ENV RELEASE=${RELEASE}
 COPY --chmod=755 build/install.sh /install.sh
 RUN /install.sh && rm /install.sh
 
@@ -49,7 +49,6 @@ RUN rm -f /etc/ssh/ssh_host_*
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Set template version
-ARG RELEASE
 ENV TEMPLATE_VERSION=${RELEASE}
 
 # Copy the scripts
