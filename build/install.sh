@@ -18,9 +18,6 @@ pip3 install --no-cache-dir --upgrade pip setuptools wheel
 
 pip3 install --no-cache-dir torch==${TORCH_VERSION} torchvision torchaudio==${TORCH_VERSION} xformers==${XFORMERS_VERSION} --extra-index-url ${INDEX_URL}
 pip3 install --no-cache-dir torch==$TORCH_VERSION -r requirements.txt
-pip3 install --no-cache-dir "transformers>=4.43.0,<5.0.0"
-# Create voices directory expected by tortoise
-mkdir -p /TTS-WebUI/voices/tortoise
 pip3 install --no-cache-dir "tts-webui-extension.rvc>=0.0.6" --extra-index-url https://tts-webui.github.io/extensions-index/
 pip3 install --no-cache-dir "tts-webui-extension.styletts2>=0.1.0" --extra-index-url https://tts-webui.github.io/extensions-index/
 deactivate
