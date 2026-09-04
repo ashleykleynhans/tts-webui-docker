@@ -14,6 +14,10 @@ variable "RELEASE" {
     default = "v1.5.1"
 }
 
+variable "RELEASE_SUFFIX" {
+    default = ""
+}
+
 variable "CU_VERSION" {
     default = "128"
 }
@@ -40,13 +44,13 @@ variable "PYTHON_VERSION" {
 
 target "default" {
     dockerfile = "Dockerfile"
-    tags = ["${REGISTRY}/${REGISTRY_USER}/${APP}:${RELEASE}"]
+    tags = ["${REGISTRY}/${REGISTRY_USER}/${APP}:${RELEASE}${RELEASE_SUFFIX}"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "${BASE_IMAGE_REPOSITORY}:${BASE_IMAGE_VERSION}-python${PYTHON_VERSION}-cuda${CUDA_VERSION}-torch${TORCH_VERSION}"
         INDEX_URL = "https://download.pytorch.org/whl/cu${CU_VERSION}"
         TORCH_VERSION = "${TORCH_VERSION}+cu${CU_VERSION}"
         XFORMERS_VERSION = "0.0.35"
-        APP_MANAGER_VERSION = "1.3.0"
+        APP_MANAGER_VERSION = "2.0.2"
     }
 }
