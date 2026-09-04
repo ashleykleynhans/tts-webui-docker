@@ -7,12 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.5.2] - 2026-09-04
+
 ### Added
 - Automated Docker image build workflow (`.github/workflows/build-docker-image.yml`) copied from `facefusion-docker` to build and push to `ghcr.io` on pushes to `main` that modify `docker-bake.hcl` and on manual dispatch (`workflow_dispatch`) at `.github/workflows/build-docker-image.yml:1`
 - `RELEASE_SUFFIX` variable in `docker-bake.hcl:17` for optional tag suffixes (e.g. `-cuda128`) and updated default tag to `${RELEASE}${RELEASE_SUFFIX}` at `docker-bake.hcl:43`
 - SBOM generation, provenance attestations, image verification, and job summary steps in the build workflow
 
 ### Changed
+- Bumped `RELEASE` to `v1.5.2` in `docker-bake.hcl:14`
 - Bumped GitHub Actions to latest major versions in `build-docker-image.yml`: `actions/checkout@v4` -> `@v7` (v7.0.1, 2026-07-20), `docker/setup-buildx-action@v3` -> `@v4` (v4.3.0, 2026-08-19), `docker/login-action@v3` -> `@v4` (v4.6.0, 2026-07-29), `actions/upload-artifact@v4` -> `@v7` (v7.0.1, 2026-04-10), retained `anchore/sbom-action@v0` (v0.24.2, 2026-08-28) on latest `v0` track
 - `docker-bake.hcl` now supports `RELEASE_SUFFIX` handling consistent with `facefusion-docker`'s bake file for GHCR tagging via `docker-bake.override.hcl`
 
@@ -97,7 +100,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Base image 1.7.0
 
-[Unreleased]: https://github.com/ashleykleynhans/tts-webui-docker/compare/v1.5.1...HEAD
+[Unreleased]: https://github.com/ashleykleynhans/tts-webui-docker/compare/v1.5.2...HEAD
+[v1.5.2]: https://github.com/ashleykleynhans/tts-webui-docker/compare/v1.5.1...v1.5.2
 [v1.5.1]: https://github.com/ashleykleynhans/tts-webui-docker/compare/v1.4.1...v1.5.1
 [v1.4.1]: https://github.com/ashleykleynhans/tts-webui-docker/compare/v1.1.0...v1.4.1
 [v1.1.0]: https://github.com/ashleykleynhans/tts-webui-docker/compare/5.1.3...v1.1.0
